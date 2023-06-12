@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</html>
+<style>
+    .navigac {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background-color: #f2f2f2;
+    }
+
+    .navigac li {
+        display: inline-block;
+    }
+
+    .navigac li a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .navigac li a:hover {
+        background-color: #ddd;
+    }
+</style>
+<nav>
+<ul class="navigac">
+    <li><a href="/">Domů</a></li>
+    
+    <!-- pro admina  -->
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+        <li><a href="/admin/novy_film">Přidat film</a></li>
+        <li><a href="/admin/filmy">Seznam filmů</a></li>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['role'])): ?>
+        <li><a href="/logout">Odhlásit se</a></li>
+    <?php else: ?>
+        <li><a href="/login">Přihlásit se</a></li>
+    <?php endif; ?>
+
+</ul>
+</nav>

@@ -1,0 +1,7 @@
+{
+    "require": {
+        "steampixel/simple-php-router": "^0.7.1",
+      "ext-mysqli": "*",
+      "ext-iconv": "*"
+    }
+}
